@@ -21,5 +21,9 @@ jobs:
       run: dotnet restore
     - name: build
       run: dotnet build --no-restore --configuration Release
-    - name: Is this working?
-      run: hostnamectl
+    - name: Copy output
+      run: cp Devops2023Dotnet31MVC/bin/Release/net6.0/*.* ~/www/dotnet04/
+    - name: Copy static
+      run: cp -r Devops2023Dotnet31MVC/wwwroot ~/www/dotnet04/wwwroot
+    - name: Restart service
+      run: sudo systemctl restart dotnet04
