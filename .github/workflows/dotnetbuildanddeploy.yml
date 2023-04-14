@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      name: build
+    - name: build
       run: dotnet build --no-restore --configuration Release
     - name: Is this working?
       run: hostnamectl
